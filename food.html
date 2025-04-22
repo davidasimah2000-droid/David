@@ -1,3 +1,4 @@
+<!-- Arquivo: food.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,60 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Selection</title>
     <link rel="stylesheet" href="css/food.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
+        authDomain: "valentine-bestie.firebaseapp.com",
+        projectId: "valentine-bestie",
+        storageBucket: "valentine-bestie.firebasestorage.app",
+        messagingSenderId: "1020728046495",
+        appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
+        measurementId: "G-14FY4DMW6W"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.database();
+    </script>
+    <style>
+      .food-item.selected img {
+        border: 5px solid #e67373;
+        box-shadow: 0 0 15px #e67373;
+        transform: scale(1.05);
+        transition: 0.2s;
+      }
+    </style>
   </head>
   <body>
     <div id="foodquestion">
       <b>What food would you like to eat?</b>
     </div>
-
     <div class="food-selection">
-      <div class="food-item">
-        <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken" />
-        <label
-          ><input
-            type="checkbox"
-            name="food"
-            value="Burgers, fries and fried chicken"
-          />
-          burgers and fried chicken</label
-        >
+      <div class="food-item" data-food="burgers">
+        <img src="food/burgers.jpeg" alt="burgers" />
+        <label>burgers and fried chicken</label>
       </div>
-      <div class="food-item">
-        <img src="food/dog.jpeg" alt="dog" />
-        <label
-          ><input type="checkbox" name="food" value="hotdog" /> hotdog</label
-        >
+      <div class="food-item" data-food="hotdog">
+        <img src="food/dog.jpeg" alt="hotdog" />
+        <label>hotdog</label>
       </div>
-      <div class="food-item">
-        <img src="food/koreanfood.jpeg" alt="koreanfood" />
-        <label
-          ><input type="checkbox" name="food" value="Korean food" /> korean
-          food</label
-        >
+      <div class="food-item" data-food="korean">
+        <img src="food/koreanfood.jpeg" alt="korean" />
+        <label>korean food</label>
       </div>
-      <div class="food-item">
+      <div class="food-item" data-food="pasta">
         <img src="food/pasta.jpeg" alt="pasta" />
-        <label><input type="checkbox" name="food" value="pasta" /> pasta</label>
+        <label>pasta</label>
       </div>
-      <div class="food-item">
+      <div class="food-item" data-food="pizza">
         <img src="food/pizza.jpeg" alt="pizza" />
-        <label><input type="checkbox" name="food" value="pizza" /> pizza</label>
+        <label>pizza</label>
       </div>
-      <div class="food-item">
+      <div class="food-item" data-food="salad">
         <img src="food/salad.jpeg" alt="salad" />
-        <label><input type="checkbox" name="food" value="salad" /> salad</label>
+        <label>salad</label>
       </div>
-      <div class="food-item">
+      <div class="food-item" data-food="steak">
         <img src="food/steak.jpeg" alt="steak" />
-        <label><input type="checkbox" name="food" value="steak" /> steak</label>
+        <label>steak</label>
       </div>
-      <div class="food-item">
+      <div class="food-item" data-food="sushi">
         <img src="food/sushi.jpeg" alt="sushi" />
-        <label><input type="checkbox" name="food" value="sushi" /> sushi</label>
+        <label>sushi</label>
       </div>
     </div>
     <button class="button" onclick="location.href='dessert.html'">
       Continue UWU
     </button>
+    <script>
+      const items = document.querySelectorAll('.food-item');
+      let selectedFoods = [];
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          const food = item.getAttribute('data-food');
+          item.classList.toggle('selected');
+          if (selectedFoods.includes(food)) {
+            selectedFoods = selectedFoods.filter(f => f !== food);
+          } else {
+            selectedFoods.push(food);
+          }
+        });
+      });
+      document.querySelector('.button').addEventListener('click', () => {
+        localStorage.setItem('selectedFoods', JSON.stringify(selectedFoods));
+      });
+    </script>
   </body>
 </html>

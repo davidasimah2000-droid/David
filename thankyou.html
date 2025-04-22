@@ -1,3 +1,6 @@
+// thankyou.html
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thank you</title>
     <link rel="stylesheet" href="css/lastpage.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
+    authDomain: "valentine-bestie.firebaseapp.com",
+    projectId: "valentine-bestie",
+    storageBucket: "valentine-bestie.firebasestorage.app",
+    messagingSenderId: "1020728046495",
+    appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
+    measurementId: "G-14FY4DMW6W"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+</script>
+
   </head>
   <body>
     <div id="thankyou"><b>Thank you</b></div>

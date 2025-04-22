@@ -1,3 +1,4 @@
+<!-- Arquivo: activities.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,73 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activities</title>
     <link rel="stylesheet" href="css/activities.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
+        authDomain: "valentine-bestie.firebaseapp.com",
+        projectId: "valentine-bestie",
+        storageBucket: "valentine-bestie.firebasestorage.app",
+        messagingSenderId: "1020728046495",
+        appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
+        measurementId: "G-14FY4DMW6W"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.database();
+    </script>
+    <style>
+      .activity-item.selected img {
+        border: 5px solid #e67373;
+        box-shadow: 0 0 15px #e67373;
+        transform: scale(1.05);
+        transition: 0.2s;
+      }
+    </style>
   </head>
   <body>
     <div id="activityquestion"><b>What are we doing after?</b></div>
     <div class="activities-selection">
-      <div class="activity-item">
+      <div class="activity-item" data-activity="aquarium">
         <img src="activities/aquarium.jpeg" alt="aquarium" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="aquarium"
-          />aquarium</label
-        >
+        <label>aquarium</label>
       </div>
-      <div class="activity-item">
+      <div class="activity-item" data-activity="arcade">
         <img src="activities/arcade.jpeg" alt="arcade" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="arcade"
-          />arcade</label
-        >
+        <label>arcade</label>
       </div>
-      <div class="activity-item">
+      <div class="activity-item" data-activity="cinema">
         <img src="activities/cinema.jpeg" alt="cinema" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="cinema"
-          />cinema</label
-        >
+        <label>cinema</label>
       </div>
-      <div class="activity-item">
+      <div class="activity-item" data-activity="ceramics">
         <img src="activities/keramika.jpeg" alt="ceramics" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="ceramics"
-          />ceramics</label
-        >
+        <label>ceramics</label>
       </div>
-      <div class="activity-item">
-        <img src="activities/kunsthalle.jpeg" alt="kunsthalle" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="kunsthalle"
-          />exhibition</label
-        >
+      <div class="activity-item" data-activity="exhibition">
+        <img src="activities/kunsthalle.jpeg" alt="exhibition" />
+        <label>exhibition</label>
       </div>
-      <div class="activity-item">
-        <img src="activities/park.jpeg" alt="park.jpeg" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="park.jpeg"
-          />park</label
-        >
+      <div class="activity-item" data-activity="park">
+        <img src="activities/park.jpeg" alt="park" />
+        <label>park</label>
       </div>
     </div>
     <button class="button" onclick="location.href='lastpage.html'">
       Last page
     </button>
+    <script>
+      const items = document.querySelectorAll('.activity-item');
+      let selectedActivities = [];
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          const activity = item.getAttribute('data-activity');
+          item.classList.toggle('selected');
+          if (selectedActivities.includes(activity)) {
+            selectedActivities = selectedActivities.filter(a => a !== activity);
+          } else {
+            selectedActivities.push(activity);
+          }
+        });
+      });
+      document.querySelector('.button').addEventListener('click', () => {
+        localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities));
+      });
+    </script>
   </body>
 </html>
