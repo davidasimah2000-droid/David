@@ -1,44 +1,100 @@
-// thankyou.html
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thank you</title>
+    <title>Thank you кохана</title>
     <link rel="stylesheet" href="css/lastpage.css" />
 
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
-    authDomain: "valentine-bestie.firebaseapp.com",
-    projectId: "valentine-bestie",
-    storageBucket: "valentine-bestie.firebasestorage.app",
-    messagingSenderId: "1020728046495",
-    appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
-    measurementId: "G-14FY4DMW6W"
-  };
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
+        authDomain: "valentine-bestie.firebaseapp.com",
+        projectId: "valentine-bestie",
+        storageBucket: "valentine-bestie.firebaseapp.com",
+        messagingSenderId: "1020728046495",
+        appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
+        measurementId: "G-14FY4DMW6W"
+      };
 
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-</script>
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.database();
+    </script>
 
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff5e4;
+        color: #ff9494;
+        font-family: "Courier", monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+
+      #thankyou {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 300px;
+        max-width: 80%;
+        border-radius: 20px;
+        margin-bottom: 20px;
+      }
+
+      audio {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .button {
+        padding: 12px 24px;
+        font-size: 18px;
+        font-family: "Courier";
+        background-color: #ffe3e1;
+        color: #e67373;
+        border: 2px solid #ffe3e1;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 1px 1px 2px #ff9494;
+        transition: 0.3s;
+      }
+
+      .button:hover {
+        background-color: #ff9494;
+        color: #ffe3e1;
+        border-color: #ff9494;
+      }
+    </style>
   </head>
-  <body>
-    <div id="thankyou"><b>Thank you</b></div>
 
-    <img id="rizz" src="rizz.gif" alt="rizzler god" class="responsive" />
-    <br />
+  <body>
+    <div id="thankyou"><b>Thank you кохана</b></div>
+
+    <img id="rizz" src="rizz.gif" alt="rizzler god" />
+
     <audio controls autoplay loop>
       <source src="congratulations.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-    <h1>Don't go yet!</h1>
+
+    <h1>Don’t leave me yet!</h1>
+
     <button class="button" onclick="location.href='date.html'">
-      Click me UWU
+      One more thing 💕
     </button>
   </body>
 </html>

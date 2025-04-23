@@ -1,17 +1,38 @@
 /* date.css */
 
 body {
-  text-align: center;
-  margin-top: 30px;
-  font-family: "Courier";
+  margin: 0;
+  padding: 0;
+  font-family: "Courier", monospace;
   background-color: #fff5e4;
   color: #ff9494;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centraliza verticalmente */
+  height: 100vh;
+  text-align: center;
 }
+
 h1 {
   font-size: 40px;
+  margin-bottom: 20px;
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  gap: 20px; /* ADICIONA espaço entre os elementos dentro do form */
+}
+
+label {
+  margin-bottom: 20px; /* OU 30px pra mais espaço */
+}
+
+
+
 
 form .header {
   width: 100%;
@@ -21,12 +42,7 @@ form .header {
   color: #ff9494;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 25px;
-}
+
 
 .button {
   padding: 6px 10px;

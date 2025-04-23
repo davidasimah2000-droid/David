@@ -1,26 +1,10 @@
-<!-- Arquivo: activities.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Activities</title>
+    <title>Our Date Activities</title>
     <link rel="stylesheet" href="css/activities.css" />
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
-    <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
-        authDomain: "valentine-bestie.firebaseapp.com",
-        projectId: "valentine-bestie",
-        storageBucket: "valentine-bestie.firebasestorage.app",
-        messagingSenderId: "1020728046495",
-        appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
-        measurementId: "G-14FY4DMW6W"
-      };
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.database();
-    </script>
     <style>
       .activity-item.selected img {
         border: 5px solid #e67373;
@@ -32,38 +16,38 @@
   </head>
   <body>
     <div id="activityquestion"><b>What are we doing after?</b></div>
+
     <div class="activities-selection">
-      <div class="activity-item" data-activity="aquarium">
-        <img src="activities/aquarium.jpeg" alt="aquarium" />
-        <label>aquarium</label>
+      <div class="activity-item" data-activity="beach">
+        <img src="activities/beach.jpg" alt="beach" />
+        <label>Go to the beach</label>
       </div>
-      <div class="activity-item" data-activity="arcade">
-        <img src="activities/arcade.jpeg" alt="arcade" />
-        <label>arcade</label>
+      <div class="activity-item" data-activity="museum">
+        <img src="activities/museum.jpg" alt="museum" />
+        <label>Visit a museum</label>
       </div>
-      <div class="activity-item" data-activity="cinema">
-        <img src="activities/cinema.jpeg" alt="cinema" />
-        <label>cinema</label>
+      <div class="activity-item" data-activity="amusement_park">
+        <img src="activities/amusementpark.jpg" alt="amusement park" />
+        <label>Amusement park</label>
       </div>
-      <div class="activity-item" data-activity="ceramics">
-        <img src="activities/keramika.jpeg" alt="ceramics" />
-        <label>ceramics</label>
+      <div class="activity-item" data-activity="bar">
+        <img src="activities/bar.jpg" alt="bar" />
+        <label>Go to a bar</label>
       </div>
-      <div class="activity-item" data-activity="exhibition">
-        <img src="activities/kunsthalle.jpeg" alt="exhibition" />
-        <label>exhibition</label>
-      </div>
-      <div class="activity-item" data-activity="park">
-        <img src="activities/park.jpeg" alt="park" />
-        <label>park</label>
+      <div class="activity-item" data-activity="picnic">
+        <img src="activities/picnic.jpg" alt="picnic" />
+        <label>Have a picnic</label>
       </div>
     </div>
+
     <button class="button" onclick="location.href='lastpage.html'">
-      Last page
+      Final page 💐
     </button>
+
     <script>
       const items = document.querySelectorAll('.activity-item');
       let selectedActivities = [];
+
       items.forEach(item => {
         item.addEventListener('click', () => {
           const activity = item.getAttribute('data-activity');
@@ -75,6 +59,7 @@
           }
         });
       });
+
       document.querySelector('.button').addEventListener('click', () => {
         localStorage.setItem('selectedActivities', JSON.stringify(selectedActivities));
       });

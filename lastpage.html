@@ -1,128 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Obrigada 💕</title>
+    <title>Thank You 🌸</title>
     <link rel="stylesheet" href="css/flower.css" />
-    <style>
-      #thankyou {
-        font-size: 36px;
-        margin-top: 30px;
-        color: #ff9494;
-        font-family: courier;
-        text-align: center;
-      }
-
-      .resumo {
-        background-color: #ffe3e1;
-        padding: 20px;
-        margin-top: 30px;
-        border-radius: 16px;
-        font-family: courier;
-        font-size: 18px;
-        color: #e67373;
-        text-align: center;
-      }
-    </style>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Courier", monospace;
+        background-color: #fff5e4;
+        color: #ff9494;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #thankyou {
+        font-size: 36px;
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 80px;
+        position: relative;
+      }
+    </style>
+
     <script>
       const firebaseConfig = {
         apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
         authDomain: "valentine-bestie.firebaseapp.com",
-        databaseURL: "https://valentine-bestie-default-rtdb.europe-west1.firebasedatabase.app",
         projectId: "valentine-bestie",
         storageBucket: "valentine-bestie.appspot.com",
         messagingSenderId: "1020728046495",
         appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
-        measurementId: "G-14FY4DMW6W"
+        measurementId: "G-14FY4DMW6W",
+        databaseURL:
+          "https://valentine-bestie-default-rtdb.europe-west1.firebasedatabase.app/",
       };
+
       firebase.initializeApp(firebaseConfig);
-      const db = firebase.database();
     </script>
   </head>
 
   <body>
-    <div id="thankyou">Obrigada por topar essa aventura 💕</div>
+    <div id="thankyou">
+      <b>I never needed flowers to turn you into someone special — you were always my special flower 💕</b>
+    </div>
 
-    <div class="resumo" id="resumo"></div>
-
-    <div class="flower">
-      <div class="f-wrapper">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+    <div class="content">
+      <div class="flower">
+        <div class="f-wrapper">
+          <div class="flower__line"></div>
+          <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="f-wrapper f-wrapper--2">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+        <div class="f-wrapper f-wrapper--2">
+          <div class="flower__line"></div>
+          <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="f-wrapper f-wrapper--3">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+        <div class="f-wrapper f-wrapper--3">
+          <div class="flower__line"></div>
+          <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="flower__glass"></div>
+        <div class="flower__glass"></div>
+      </div>
     </div>
 
     <script>
-      const resumoDiv = document.getElementById("resumo");
-
-      const date = localStorage.getItem("selectedDate") || "N/A";
-      const food = JSON.parse(localStorage.getItem("selectedFoods") || "[]");
-      const dessert = JSON.parse(localStorage.getItem("selectedDesserts") || "[]");
-      const activity = JSON.parse(localStorage.getItem("selectedActivities") || "[]");
-
+      const userId = Date.now();
       const data = {
-        date,
-        food,
-        dessert,
-        activity
+        date: localStorage.getItem("selectedDate") || "",
+        food: JSON.parse(localStorage.getItem("selectedFood") || "[]"),
+        desserts: JSON.parse(localStorage.getItem("selectedDesserts") || "[]"),
+        activities: JSON.parse(localStorage.getItem("selectedActivities") || "[]"),
+        timestamp: new Date().toISOString(),
       };
 
-      // Mostrar resumo na tela
-      resumoDiv.innerHTML = `
-        📅 Data: <b>${date}</b><br>
-        🍔 Comidas: <b>${food.join(", ") || "nenhuma"}</b><br>
-        🍰 Sobremesas: <b>${dessert.join(", ") || "nenhuma"}</b><br>
-        🎯 Atividades: <b>${activity.join(", ") || "nenhuma"}</b>
-      `;
-
-      // Enviar para Firebase
-      db.ref("respostas").push(data)
-        .then(() => console.log("✅ Dados enviados com sucesso!"))
-        .catch(err => console.error("❌ Erro ao enviar pro Firebase:", err));
+      firebase
+        .database()
+        .ref("respostas/" + userId)
+        .set(data)
+        .then(() => console.log("Data successfully saved."))
+        .catch((err) => console.error("Error saving to Firebase:", err));
     </script>
   </body>
 </html>

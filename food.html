@@ -1,25 +1,12 @@
-<!-- Arquivo: food.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Selection</title>
+    <title>Choose your food</title>
     <link rel="stylesheet" href="css/food.css" />
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
     <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyDL2i53-x1078pOuUoT2VqYPSGwYw8UtHE",
-        authDomain: "valentine-bestie.firebaseapp.com",
-        projectId: "valentine-bestie",
-        storageBucket: "valentine-bestie.firebasestorage.app",
-        messagingSenderId: "1020728046495",
-        appId: "1:1020728046495:web:ded8c60be322e56948c3aa",
-        measurementId: "G-14FY4DMW6W"
-      };
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.database();
+      const foodOptions = [];
     </script>
     <style>
       .food-item.selected img {
@@ -31,62 +18,52 @@
     </style>
   </head>
   <body>
-    <div id="foodquestion">
-      <b>What food would you like to eat?</b>
-    </div>
+    <div id="foodquestion"><b>The menu for our special moment starts here...</b></div>
+
     <div class="food-selection">
-      <div class="food-item" data-food="burgers">
-        <img src="food/burgers.jpeg" alt="burgers" />
-        <label>burgers and fried chicken</label>
-      </div>
-      <div class="food-item" data-food="hotdog">
-        <img src="food/dog.jpeg" alt="hotdog" />
-        <label>hotdog</label>
-      </div>
-      <div class="food-item" data-food="korean">
-        <img src="food/koreanfood.jpeg" alt="korean" />
-        <label>korean food</label>
-      </div>
-      <div class="food-item" data-food="pasta">
-        <img src="food/pasta.jpeg" alt="pasta" />
-        <label>pasta</label>
+      <div class="food-item" data-food="sushi">
+        <img src="food/sushi.jpeg" alt="sushi" />
+        <label>sushi</label>
       </div>
       <div class="food-item" data-food="pizza">
         <img src="food/pizza.jpeg" alt="pizza" />
         <label>pizza</label>
       </div>
-      <div class="food-item" data-food="salad">
-        <img src="food/salad.jpeg" alt="salad" />
-        <label>salad</label>
+      <div class="food-item" data-food="burgers">
+        <img src="food/burgers.jpeg" alt="burgers" />
+        <label>burgers</label>
       </div>
-      <div class="food-item" data-food="steak">
-        <img src="food/steak.jpeg" alt="steak" />
-        <label>steak</label>
+      <div class="food-item" data-food="burrito">
+        <img src="food/burrito.jpg" alt="burrito" />
+        <label>burrito</label>
       </div>
-      <div class="food-item" data-food="sushi">
-        <img src="food/sushi.jpeg" alt="sushi" />
-        <label>sushi</label>
+      <div class="food-item" data-food="kebab">
+        <img src="food/kebab.jpg" alt="kebab" />
+        <label>kebab</label>
       </div>
     </div>
+
     <button class="button" onclick="location.href='dessert.html'">
-      Continue UWU
+      Next 🍰
     </button>
+
     <script>
       const items = document.querySelectorAll('.food-item');
-      let selectedFoods = [];
+      let selectedFood = [];
       items.forEach(item => {
         item.addEventListener('click', () => {
           const food = item.getAttribute('data-food');
           item.classList.toggle('selected');
-          if (selectedFoods.includes(food)) {
-            selectedFoods = selectedFoods.filter(f => f !== food);
+          if (selectedFood.includes(food)) {
+            selectedFood = selectedFood.filter(f => f !== food);
           } else {
-            selectedFoods.push(food);
+            selectedFood.push(food);
           }
         });
       });
+
       document.querySelector('.button').addEventListener('click', () => {
-        localStorage.setItem('selectedFoods', JSON.stringify(selectedFoods));
+        localStorage.setItem('selectedFood', JSON.stringify(selectedFood));
       });
     </script>
   </body>
