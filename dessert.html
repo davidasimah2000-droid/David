@@ -11,9 +11,9 @@
 
     <div class="dessert-selection">
       <div class="dessert-item">
-        <img src="food/boba.jpeg" alt="boba" />
+        <img src="food/Cheescake.jpg" alt="Cheescake" />
         <label
-          ><input type="checkbox" name="dessert" value="boba" /> boba</label
+          ><input type="checkbox" name="dessert" value="Cheescake" /> Cheescake</label
         >
       </div>
       <div class="dessert-item">
@@ -23,32 +23,56 @@
         >
       </div>
       <div class="dessert-item">
-        <img src="food/che.jpeg" alt="che" />
-        <label><input type="checkbox" name="dessert" value="che" /> che</label>
+        <img src="food/chocolate.jpg" alt="che" />
+        <label><input type="checkbox" name="dessert" value="chocolate" /> Chocolate caliente</label>
       </div>
       <div class="dessert-item">
-        <img src="food/mochi.jpeg" alt="mochi" />
+        <img src="food/Mochi.jpg" alt="mochi" />
         <label
-          ><input type="checkbox" name="dessert" value="mochi" /> mochi</label
+          ><input type="checkbox" name="dessert" value="mochi" /> mochi :3</label
         >
       </div>
       <div class="dessert-item">
-        <img src="food/randombun.jpeg" alt="randombun" />
+        <img src="food/Creps.jpg" alt="Creps" />
         <label
-          ><input type="checkbox" name="dessert" value="randombun" /> random
-          bun</label
+          ><input type="checkbox" name="dessert" value="Creps" /> Creps</label
         >
       </div>
       <div class="dessert-item">
-        <img src="food/taiyaki.jpeg" alt="taiyaki" />
+        <img src="food/Helado.jpg" alt="Helado" />
         <label
-          ><input type="checkbox" name="dessert" value="taiyaki" />
-          taiyaki</label
+          ><input type="checkbox" name="dessert" value="Helado" />
+          Helado... ta bien, nieve</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="food/malteada.jpg" alt="malteada" />
+        <label
+          ><input type="checkbox" name="dessert" value="malteada" />
+          Malteada</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="food/zanahoria.jpg" alt="zanahoria" />
+        <label
+          ><input type="checkbox" name="dessert" value="zanahoria" />
+          Tortita de zanahoria</label
         >
       </div>
     </div>
-    <button class="button" onclick="location.href='activities.html'">
-      Continue UWU
-    </button>
+    <button class="button" onclick="guardarPostres()">
+  Continuar UWU
+</button>
+
+<script>
+  function guardarPostres() {
+    const postresSeleccionados = [];
+    document.querySelectorAll('input[name="dessert"]:checked').forEach(checkbox => {
+      postresSeleccionados.push(checkbox.value);
+    });
+    localStorage.setItem('postres', JSON.stringify(postresSeleccionados));
+    location.href = 'activities.html';
+  }
+</script>
   </body>
 </html>

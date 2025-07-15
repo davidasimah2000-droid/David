@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/activities.css" />
   </head>
   <body>
-    <div id="activityquestion"><b>What are we doing after?</b></div>
+    <div id="activityquestion"><b>Qué vamos a hacer después?</b></div>
     <div class="activities-selection">
       <div class="activity-item">
         <img src="activities/aquarium.jpeg" alt="aquarium" />
@@ -16,7 +16,7 @@
             type="checkbox"
             name="activities"
             value="aquarium"
-          />aquarium</label
+          />acuario</label
         >
       </div>
       <div class="activity-item">
@@ -36,7 +36,7 @@
             type="checkbox"
             name="activities"
             value="cinema"
-          />cinema</label
+          />cine</label
         >
       </div>
       <div class="activity-item">
@@ -46,32 +46,53 @@
             type="checkbox"
             name="activities"
             value="ceramics"
-          />ceramics</label
+          />ceramica</label
         >
       </div>
       <div class="activity-item">
-        <img src="activities/kunsthalle.jpeg" alt="kunsthalle" />
+        <img src="activities/teatro.jpg" alt="teatro" />
         <label
           ><input
             type="checkbox"
             name="activities"
-            value="kunsthalle"
-          />exhibition</label
+            value="teatro"
+          />teatro</label
         >
       </div>
       <div class="activity-item">
-        <img src="activities/park.jpeg" alt="park.jpeg" />
+        <img src="activities/park.jpeg" alt="park" />
         <label
           ><input
             type="checkbox"
             name="activities"
-            value="park.jpeg"
-          />park</label
+            value="park"
+          />caminar al parque y picnic</label
+        >
+      </div>
+      <div class="activity-item">
+        <img src="activities/bici.jpg" alt="bici" />
+        <label
+          ><input
+            type="checkbox"
+            name="activities"
+            value="bici"
+          />bici</label
         >
       </div>
     </div>
-    <button class="button" onclick="location.href='lastpage.html'">
-      Last page
-    </button>
+    <button class="button" onclick="guardarActividades()">
+  Ver resumen
+</button>
+
+<script>
+  function guardarActividades() {
+    const actividadesSeleccionadas = [];
+    document.querySelectorAll('input[name="activities"]:checked').forEach(checkbox => {
+      actividadesSeleccionadas.push(checkbox.value);
+    });
+    localStorage.setItem('actividades', JSON.stringify(actividadesSeleccionadas));
+    location.href = 'summary.html';
+  }
+</script>
   </body>
 </html>
