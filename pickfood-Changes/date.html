@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fecha</title>
+    <link rel="stylesheet" href="css/date.css" />
+  </head>
+  <body>
+    <h1 title="elige una fecha">¿Estás libre el...</h1>
+    <form class="form-group">
+      <label>(No hay agenda después del apocalipsis)</label>
+      <div>
+        <input type="date" id="fechaCita" />
+        <button class="button" type="button" onclick="guardarFecha()">
+          Continuar
+        </button>
+      </div>
+    </form>
+    
+    <script>
+      function guardarFecha() {
+        const fecha = document.getElementById('fechaCita').value;
+        localStorage.setItem('fechaCita', fecha);
+        location.href = 'food.html';
+      }
+    </script>
+  </body>
+</html>

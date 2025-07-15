@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comida</title>
+    <link rel="stylesheet" href="css/food.css" />
+  </head>
+  <body>
+    <div id="foodquestion">
+      <b>¿Qué querés tragar?... a parte de a mi</b>
+    </div>
+
+    <div class="food-selection">
+      <!-- Los items de comida permanecen igual pero con texto en español -->
+      <div class="food-item">
+        <img src="food/burgers.jpeg" alt="Hamburguesas y pollo frito" />
+        <label>
+          <input type="checkbox" name="food" value="Hamburguesas y pollo frito" />
+          Hamburguesa
+        </label>
+      </div>
+      <div class="food-item">
+        <img src="food/perros.jpeg" alt="dog" />
+        <label
+          ><input type="checkbox" name="food" value="perros" /> perrosss</label
+        >
+      </div>
+      <div class="food-item">
+        <img src="food/koreanfood.jpeg" alt="koreanfood" />
+        <label
+          ><input type="checkbox" name="food" value="Korean food" /> comida koreana </label
+        >
+      </div>
+      <div class="food-item">
+        <img src="food/pasta.jpg" alt="pasta" />
+        <label><input type="checkbox" name="food" value="pasta" /> pastita </label> <b>comida italiana pes</b>
+      </div>
+      <div class="food-item">
+        <img src="food/pizza.jpeg" alt="pizza" />
+        <label><input type="checkbox" name="food" value="pizza" /> pizza</label>
+      </div>
+      <div class="food-item">
+        <img src="food/tacos.jpeg" alt="tacos" />
+        <label><input type="checkbox" name="food" value="tacos" /> Pos que maaaass </label>
+      </div>
+      <div class="food-item">
+        <img src="food/steak.jpeg" alt="steak" />
+        <label><input type="checkbox" name="food" value="steak" /> Asado </label>
+      </div>
+      <div class="food-item">
+        <img src="food/sushi.jpeg" alt="sushi" />
+        <label><input type="checkbox" name="food" value="sushi" /> sushi</label>
+      </div>
+      <div class="food-item">
+        <img src="food/pollo.jpeg" alt="pollo" />
+        <label><input type="checkbox" name="food" value="pollo" /> poshooo</label>
+      </div>
+      <div class="food-item">
+        <img src="food/ramen.jpg" alt="ramen" />
+        <label><input type="checkbox" name="food" value="ramen" /> ramen</label>
+      </div>
+      <div class="food-item">
+        <img src="food/china.jpg" alt="china" />
+        <label><input type="checkbox" name="food" value="china" /> comida china</label>
+      </div>
+      <div class="food-item">
+        <img src="food/peru.jpg" alt="peru" />
+        <label><input type="checkbox" name="food" value="peru" /> Cuzcooo</label> <b>comida peruana pes</b>
+      </div>
+      <div class="food-item">
+        <img src="food/mariscos.jpg" alt="mariscos" />
+        <label><input type="checkbox" name="food" value="mariscos" /> Gyojin</label> <b>no me odies xD</b>
+      </div>
+      <div class="food-item">
+        <img src="food/maruchan.jpg" alt="maruchan" />
+        <label><input type="checkbox" name="food" value="maruchan" /> la marucha</label> <b> no hay billullo</b>
+      </div>
+    </div>
+    <button class="button" onclick="guardarComida()">
+      Continuar UWU
+    </button>
+    
+    <script>
+      function guardarComida() {
+        const comidasSeleccionadas = [];
+        document.querySelectorAll('input[name="food"]:checked').forEach(checkbox => {
+          comidasSeleccionadas.push(checkbox.value);
+        });
+        localStorage.setItem('comidas', JSON.stringify(comidasSeleccionadas));
+        location.href = 'dessert.html';
+      }
+    </script>
+  </body>
+</html>
+
