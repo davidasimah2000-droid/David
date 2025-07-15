@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumen de nuestra cita</title>
+  <style>
+    body {
+      font-family: 'Courier', monospace;
+      background-color: #fff5e4;
+      color: #ff9494;
+      text-align: center;
+      padding: 20px;
+    }
+    .resumen-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffe3e1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .resumen-item {
+      margin: 15px 0;
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px dashed #ff9494;
+    }
+    .botones-compartir {
+      margin-top: 30px;
+    }
+    .boton-compartir {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #ff9494;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .boton-compartir:hover {
+      background-color: #e67373;
+      transform: scale(1.05);
+    }
+    .boton-compartir.whatsapp {
+      background-color: #25D366;
+    }
+    .boton-compartir.email {
+      background-color: #EA4335;
+    }
+  </style>
+</head>
+<body>
+  <h1>Avisadisima 7-7/*</h1>
+  <div class="resumen-container">
+    <div class="resumen-item">
+      <h2>📅 Fecha</h2>
+      <p id="resumen-fecha"></p>
+    </div>
+    
+    <div class="resumen-item">
+      <h2>🍔 Comida</h2>
+      <p id="resumen-comida"></p>
+    </div>
+    
+    <div class="resumen-item">
+      <h2>🍰 Postre</h2>
+      <p id="resumen-postre"></p>
+    </div>
+    
+    <div class="resumen-item">
+      <h2>🎉 Actividades</h2>
+      <p id="resumen-actividades"></p>
+    </div>
+    
+    <div class="botones-compartir">
+      <a href="#" class="boton-compartir whatsapp" id="whatsappBtn">Compartir por WhatsApp</a>
+      <a href="#" class="boton-compartir email" id="emailBtn">Enviar por Correo</a>
+    </div>
+  </div>
+
+  <script>
+    // Obtener datos del localStorage
+    const fecha = localStorage.getItem('fechaCita') || 'No seleccionada';
+    const comidas = JSON.parse(localStorage.getItem('comidas') || '[]');
+    const postres = JSON.parse(localStorage.getItem('postres') || '[]');
+    const actividades = JSON.parse(localStorage.getItem('actividades') || '[]');
+    
+    // Mostrar en la página
+    document.getElementById('resumen-fecha').textContent = fecha;
+    document.getElementById('resumen-comida').textContent = comidas.join(', ') || 'No seleccionada';
+    document.getElementById('resumen-postre').textContent = postres.join(', ') || 'No seleccionado';
+    document.getElementById('resumen-actividades').textContent = actividades.join(', ') || 'No seleccionadas';
+    
+    // Configurar botón de WhatsApp
+    document.getElementById('whatsappBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const texto = `Avisadisima 7-7/* 🥰\n\nFecha: ${fecha}\n🍔Comida: ${comidas.join(', ')}\n🍰Postre: ${postres.join(', ')}\n🎉Actividades: ${actividades.join(', ')}\nMás te vale estar list@ o hay divorcio ❤️`;
+      const textoCodificado = encodeURIComponent(texto);
+      window.open(`https://wa.me/?text=${textoCodificado}`, '_blank');
+    });
+    
+    // Configurar botón de Correo
+    document.getElementById('emailBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const asunto = encodeURIComponent('Avisadisima 7-7/*');
+      const cuerpo = encodeURIComponent(
+        `Estos son los detalles de nuestra cita:\n\nFecha: ${fecha}\nComida: ${comidas.join(', ')}\nPostre: ${postres.join(', ')}\nActividades: ${actividades.join(', ')}\n\n¡k mocionnn ❤️`
+      );
+      window.location.href = `mailto:?subject=${asunto}&body=${cuerpo}`;
+    });
+  </script>
+  <button class="button" onclick="location.href='lastpage.html'">
+  Te amo
+</button>
+</body>
+</html>
