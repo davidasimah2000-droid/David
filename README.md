@@ -1,14 +1,14 @@
-# Will You Be My Valentine?
+# Will You Be My Girlfriend?
 
 Welcome to the "Will You Be My Valentine?" project, a playful and interactive way to ask that special someone the big question this Valentine's Day. Hosted as a GitHub Page, this project offers a unique blend of creativity and technology to make your Valentine's Day proposal unforgettable.
 
 ## Overview
 
-"Will You Be My Valentine?" is a web-based application that presents users with the question "Will you be my valentine?" followed by two options: "Yes" and "No". What makes this project special is the interactive and engaging way it handles responses, especially if someone tries to click "No".
+"Will You Be My Girlfriend?" is a web-based application that presents users with the question "Will you be my valentine?" followed by two options: "Yes" and "No". What makes this project special is the interactive and engaging way it handles responses, especially if someone tries to click "No".
 
 ## Features
 
-- **Interactive Question**: The core of the project is the interactive Valentine's Day proposal.
+- **Interactive Question**: The core of the project is the interactive Girlfriend proposal.
 - **Responsive Design**: Crafted to look great on both desktop and mobile devices.
 - **Playful Interaction**: If the user attempts to click "No", watch out for a little surprise that might just sway their decision!
 
@@ -21,13 +21,13 @@ This project is built using simple yet powerful web technologies:
 
 ## How to View
 
-To experience "Will You Be My Valentine?", simply visit [https://byquangthanh.github.io/valentine.github.io/](https://byquangthanh.github.io/valentine.github.io/) from any modern web browser.
+To experience "Will You Be My Girlfriend?", simply visit [https://byquangthanh.github.io/valentine.github.io/](https://byquangthanh.github.io/girlfriend.github.io/) from any modern web browser.
 
 ## How to Contribute
 
-Contributions to the "Will You Be My Valentine?" project are more than welcome. Whether it's suggesting new features, improving the design, or fixing bugs, here's how you can contribute:
+Contributions to the "Will You Be My Girlfriend?" project are more than welcome. Whether it's suggesting new features, improving the design, or fixing bugs, here's how you can contribute:
 
-1. **Fork the Repository**: Start by forking the [project repository](https://github.com/byquangthanh/valentine.github.io) on GitHub.
+1. **Fork the Repository**: Start by forking the [project repository](https://github.com/byquangthanh/girlfriend.github.io) on GitHub.
 2. **Clone Your Fork**: Clone your fork to your local machine for development.
 3. **Create a New Branch**: Make a new branch for your changes.
 4. **Make Your Changes**: Implement your feature, fix, or improvement.
