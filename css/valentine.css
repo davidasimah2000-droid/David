@@ -37,3 +37,12 @@ img {
   border: 2px solid #ff9494;
   box-shadow: 1px 1px 2px #ffe3e1;
 }
+
+/* small image that appears next to the No button */
+.oh-no-img {
+  height: 56px;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 8px;
+  border-radius: 8px;
+}
